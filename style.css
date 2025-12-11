@@ -14,8 +14,6 @@ body {
     display: flex;
     height: 100vh;
 }
-
-/* SIDEBAR */
 .sidebar {
     width: 260px;
     background: #131313;
@@ -205,38 +203,28 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- DELETE INTERACTION STYLING --- */
-
-/* 1. Container Setup (Crucial for sliding) */
 .note-item-container {
     position: relative;
     display: flex;
     align-items: center; 
     margin-bottom: 15px;
-    overflow: hidden; /* Hide the button when it's off-screen */
-    /* Adjustments to match .note-item's look */
-    background: #161616; /* Apply background here to cover the full width */
+    overflow: hidden;
+    background: #161616;
     border-radius: 12px;
 }
 
-/* 2. Note Item (The sliding element) */
 .note-item {
-    /* Existing styles: */
     display: block;
     padding: 16px;
     text-decoration: none;
     color: white;
-    
-    /* New styles for animation: */
     flex-grow: 1;
-    position: relative; /* Needed for transform */
-    width: 100%; /* Ensure it spans the full width of the container */
-    background: transparent; /* Move the background color to the container */
-    transition: transform 0.3s ease, background 0.25s ease; /* Add transform transition */
+    position: relative;
+    width: 100%;
+    background: transparent;
+    transition: transform 0.3s ease, background 0.25s ease;
     margin-bottom: 0;
 }
-
-/* Re-apply hover styles to the container */
 .note-item-container:hover {
     background: #1d1d1d;
 }
@@ -276,12 +264,9 @@ body {
     cursor: pointer;
     z-index: 10;
 }
-
-
 .note-item-container:hover .note-item {
     transform: translateX(-50px);
 }
-
 .note-item-container:hover .delete-btn {
     transform: translateX(0);
 }
