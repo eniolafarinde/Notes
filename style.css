@@ -1,0 +1,161 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #131313;
+    padding: 30px 20px;
+    border-right: 1px solid #1f1f1f;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+    opacity: 0.7;
+}
+
+.nav li {
+    list-style: none;
+    margin-bottom: 18px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 5px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.nav li:hover {
+    background: #1c1c1c;
+}
+
+.add-note-btn {
+    display: block;
+    margin-top: 40px;
+    padding: 12px;
+    background: #ff4d00;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* NOTES PANEL */
+.notes-panel {
+    width: 360px;
+    background: #0f0f0f;
+    border-right: 1px solid #1f1f1f;
+    padding: 20px;
+}
+
+.panel-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.notes-list {
+    overflow-y: auto;
+    height: calc(100vh - 100px);
+}
+
+.note-item {
+    display: block;
+    background: #161616;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: white;
+    transition: 0.25s ease;
+}
+
+.note-item:hover {
+    background: #1d1d1d;
+}
+
+.note-item.active {
+    border-left: 4px solid #ff4d00;
+    background: #1d1d1d;
+}
+
+.note-item h4 {
+    margin: 0;
+    margin-bottom: 6px;
+    font-size: 17px;
+}
+
+.note-item p {
+    opacity: 0.7;
+    margin: 0;
+    font-size: 14px;
+}
+
+.date {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+/* EDITOR */
+.editor {
+    flex: 1;
+    padding: 25px 40px;
+}
+
+.editor-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title-input {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 32px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.editor-area {
+    flex: 1;
+    background: #111;
+    border: 1px solid #1f1f1f;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    resize: none;
+    font-size: 16px;
+}
+
+.save-btn {
+    margin-top: 20px;
+    padding: 14px 0;
+    background: #ff4d00;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.empty-editor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: 0.5;
+    font-size: 20px;
+}
