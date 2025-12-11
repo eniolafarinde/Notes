@@ -298,3 +298,35 @@ body {
     padding: 20px;
     height: 100%;
 }
+
+.attachment-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.attachment-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: #1f1f1f;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.attachment-btn:hover {
+    background: #2b2b2b;
+}
+
+.attachment-btn .fas {
+    margin-right: 8px;
+    color: #ff4d00;
+}
+
+#file-name-display {
+    font-style: italic;
+    font-size: 14px;
+}
