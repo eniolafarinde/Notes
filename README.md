@@ -1,4 +1,4 @@
-# PHP Notes App
+# Notes App
 
 A simple, lightweight notes application built with **pure PHP** and **JSON-based storage**.
 No database required — perfect for beginners or for environments where installing MySQL/XAMPP is difficult.
