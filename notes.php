@@ -17,7 +17,6 @@ $notes = json_decode(file_get_contents($notesFile), true);
 
 <div class="layout">
 
-    <!-- Sidebar -->
     <aside class="sidebar">
         <h2 class="sidebar-title">Menu</h2>
 
@@ -31,7 +30,6 @@ $notes = json_decode(file_get_contents($notesFile), true);
         <a href="new_note.php" class="add-note-btn">＋ Add Note</a>
     </aside>
 
-    <!-- Notes Full Page -->
     <div class="notes-full-page">
         <h1 class="page-title">All Notes</h1>
 
@@ -40,7 +38,7 @@ $notes = json_decode(file_get_contents($notesFile), true);
                 <?php foreach ($notes as $id => $note): ?>
                     <a href="index.php?id=<?= $id ?>" class="note-card">
                         <h3><?= htmlspecialchars($note["title"]) ?></h3>
-                        <p><?= htmlspecialchars(substr($note["text"], 0, 120)) ?>...</p>
+                        <p><?= substr($note["text"], 0, 120) ?>...</p>
                         <span class="date"><?= $note["timestamp"] ?></span>
                     </a>
                 <?php endforeach; ?>

@@ -270,3 +270,31 @@ body {
 .note-item-container:hover .delete-btn {
     transform: translateX(0);
 }
+
+.editor-area {
+    background: #111;
+    border: 1px solid #1f1f1f;
+    border-radius: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ql-toolbar.ql-snow {
+    background: #181818;
+    border: none;
+    border-bottom: 1px solid #1f1f1f;
+    border-radius: 12px 12px 0 0;
+    padding: 10px 15px;
+}
+.ql-container.ql-snow {
+    flex: 1;
+    color: white;
+    font-size: 16px;
+    border: 1px solid #181818;
+}
+.ql-editor {
+    min-height: 200px;
+    padding: 20px;
+    height: 100%;
+}

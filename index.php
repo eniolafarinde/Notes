@@ -15,6 +15,8 @@ if (isset($_GET["id"])) {
     <title>Notes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 </head>
 <body>
 
@@ -40,8 +42,7 @@ if (isset($_GET["id"])) {
                     <a class="note-item <?= ($selectedNote && array_key_exists($index, $notes) && $notes[$index] === $selectedNote) ? "active" : "" ?>"
                        href="?id=<?= $index ?>">
                         <h4><?= htmlspecialchars($n["title"] ?? "Untitled") ?></h4>
-                        <p><?= htmlspecialchars(substr($n["text"], 0, 60)) ?>...</p>
-                        <span class="date"><?= $n["timestamp"] ?></span>
+                        <p><?= substr(strip_tags($n["text"]), 0, 60) ?>...</p>
                     </a>
                     <a href="delete.php?id=<?= $index ?>" 
                        class="delete-btn" 
@@ -58,7 +59,10 @@ if (isset($_GET["id"])) {
             <form action="save_note.php" method="POST" class="editor-form">
                 <input type="hidden" name="id" value="<?= $_GET['id'] ?>" />
                 <input class="title-input" name="title" value="<?= htmlspecialchars($selectedNote["title"]) ?>" />
-                <textarea class="editor-area" name="text"><?= htmlspecialchars($selectedNote["text"]) ?></textarea>
+                <input type="hidden" name="text" id="hidden_text_input" value="<?= htmlspecialchars($selectedNote["text"]) ?>" />
+                <div id="editor-container" class="editor-area">
+                    <?= $selectedNote["text"] ?>
+                </div>
                 <button class="save-btn">Save</button>
             </form>
         <?php else: ?>
@@ -70,6 +74,34 @@ if (isset($_GET["id"])) {
     </div>
 
 </div>
+<script>
+    <?php if ($selectedNote): ?>
+        var toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'], 
+            [{ 'header': 1 }, { 'header': 2 }],              
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            [{ 'indent': '-1'}, { 'indent': '+1' }],          
+            [{ 'size': ['small', false, 'large', 'huge'] }], 
+            [{ 'font': [] }],
+            [{ 'color': [] }, { 'background': [] }],        
+            [{ 'align': [] }],
+            ['clean']                                       
+        ];
+        var quill = new Quill('#editor-container', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
 
+        var form = document.querySelector('.editor-form');
+        var hiddenInput = document.getElementById('hidden_text_input');
+        
+        form.onsubmit = function() {
+            hiddenInput.value = quill.root.innerHTML;
+            return true; 
+        };
+    <?php endif; ?>
+    </script>
 </body>
 </html> 
