@@ -10,7 +10,7 @@ No database required — perfect for beginners or for environments where install
 * Notes saved in a single `notes.json` file
 * Runs on PHP’s built-in server (no frameworks required)
 
-## 🛠 Requirements
+## Requirements
 
 * **PHP 7.4+** installed on your computer
   Check by running:
@@ -21,7 +21,7 @@ No database required — perfect for beginners or for environments where install
 
 No MySQL, XAMPP, or Apache required.
 
-## ▶️ How to Run the App
+## How to Run the App
 
 ### **Option 1 — PHP Built-In Server (Recommended)**
 
