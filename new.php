@@ -1,20 +1,20 @@
 <?php
-$db = new PDO('sqlite:notes.db');
+$notesFile = "notes.json";
+if (!file_exists($notesFile)) file_put_contents($notesFile, "[]");
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $stmt = $db->prepare("INSERT INTO notes (title, content) VALUES (?, ?)");
-    $stmt->execute([$_POST['title'], $_POST['content']]);
-    header("Location: index.php");
-}
-?>
-<!DOCTYPE html>
-<html>
-<body>
-<h1>New Note</h1>
-<form method="POST">
-<input name="title" placeholder="Title"><br><br>
-<textarea name="content" placeholder="Content"></textarea><br><br>
-<button type="submit">Save</button>
-</form>
-</body>
-</html>
+$notes = json_decode(file_get_contents($notesFile), true);
+
+$new = [
+    "title" => "Untitled Note",
+    "text"  => "",
+    "timestamp" => date("Y-m-d H:i:s")
+];
+
+$notes[] = $new;
+
+file_put_contents($notesFile, json_encode($notes, JSON_PRETTY_PRINT));
+
+$newId = array_key_last($notes);
+
+header("Location: index.php?id=" . $newId);
+exit();
