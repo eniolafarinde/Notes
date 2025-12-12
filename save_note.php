@@ -43,11 +43,29 @@ if (isset($_POST['is_quill_upload']) && $_POST['is_quill_upload'] == '1') {
 }
 
 $id = isset($_POST["id"]) && $_POST["id"] !== "" ? intval($_POST["id"]) : null;
+$newFolderId = $_POST['new_folder_id'] ?? null; 
+if ($newFolderId === '') {
+    $newFolderId = null;
+} else {
+    $newFolderId = intval($newFolderId);
+}
+
+$currentFolderId = $_POST['current_folder_id'] ?? null;
+if ($currentFolderId !== null) {
+    $currentFolderId = intval($currentFolderId);
+}
+
+
 $newNoteData = [
     "title" => trim($_POST["title"]) ?: "Untitled",
     "text"  => $_POST["text"] ?? '', 
     "timestamp" => date("Y-m-d H:i:s"),
+    "folder_id" => $newFolderId,
 ];
+
+if ($newFolderId !== 99) {
+    unset($newNoteData['deleted_at']);
+}
 
 if ($id !== null && isset($notes[$id])) {
     $notes[$id] = array_merge($notes[$id], $newNoteData);
@@ -60,6 +78,12 @@ if ($id !== null && isset($notes[$id])) {
 
 file_put_contents($notesFile, json_encode($notes, JSON_PRETTY_PRINT));
 
-header("Location: index.php?id=" . $id);
+$redirectParams = "id=" . $id;
+$targetFolderId = $newFolderId ?? $currentFolderId;
+
+if ($targetFolderId !== null) {
+    $redirectParams .= "&folder_id=" . $targetFolderId;
+}
+header("Location: index.php?" . $redirectParams);
 exit();
 ?>
