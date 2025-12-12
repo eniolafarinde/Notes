@@ -53,7 +53,7 @@ if (isset($_GET["id"])) {
             <li><a href="index.php" class="nav-link <?= ($selectedFolderId === null) ? 'active-folder' : '' ?>">Home</a></li>
             <li><a href="notes.php" class="nav-link">Notes</a></li>
             <li><a href="folders_page.php" class="nav-link">Folders</a></li>
-            <li>Calendar</li>
+            <li><a href="calendar.php" class="nav-link">Calendar</li>
         </ul>
 
         <a href="new.php" class="add-note-btn" style="margin-top: 40px;">＋ Add Note</a>

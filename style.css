@@ -478,3 +478,16 @@ body {
 .folder-note-item .actions .fa-times {
      color: #ff4d00;
 }
+
+.tag-work { 
+    background-color: #ff4d00 !important;
+    border-color: #ff4d00 !important;
+}
+.tag-school { 
+    background-color: #4CAF50 !important;
+    border-color: #4CAF50 !important; 
+}
+.tag-event { 
+    background-color: #2196F3 !important;
+    border-color: #2196F3 !important; 
+}
