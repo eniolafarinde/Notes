@@ -23,7 +23,7 @@ $notes = json_decode(file_get_contents($notesFile), true);
         <ul class="nav">
             <li><a href="index.php" class="nav-link">Home</a></li>
             <li><a href="notes.php" class="nav-link">Notes</a></li>
-            <li>Folders</li>
+            <li><a href="folders_page.php" class="nav-link">Folders</li>
             <li>Calendar</li>
         </ul>
 

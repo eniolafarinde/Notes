@@ -1,0 +1,12 @@
+[
+    {
+        "id": 99,
+        "name": "Recently Deleted",
+        "is_special": true
+    },
+    {
+        "id": 100,
+        "name": "chanel",
+        "is_special": false
+    }
+]
