@@ -1,0 +1,38 @@
+[
+    {
+        "id": "693b9dd4260d0",
+        "title": "OpenAI OA",
+        "start": "2025-12-12T09:00",
+        "end": "2025-12-12T10:00",
+        "allDay": false,
+        "tag": "work",
+        "color": "#ff4d00"
+    },
+    {
+        "id": "693b9deebe16f",
+        "title": "Meet Rawal",
+        "start": "2025-12-11T09:00",
+        "end": "2025-12-11T10:00",
+        "allDay": false,
+        "tag": "school",
+        "color": "#4CAF50"
+    },
+    {
+        "id": "693ba04abbe6a",
+        "title": "Hackathan",
+        "start": "2025-12-15T10:00",
+        "end": "2025-12-15T11:00",
+        "allDay": false,
+        "tag": "personal",
+        "color": "#666666"
+    },
+    {
+        "id": "693ba07161dcd",
+        "title": "ASA",
+        "start": "2025-12-11T13:00",
+        "end": "2025-12-11T15:00",
+        "allDay": false,
+        "tag": "event",
+        "color": "#2196F3"
+    }
+]

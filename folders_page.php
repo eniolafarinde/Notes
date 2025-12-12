@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['folder_name'])) {
             <li><a href="index.php" class="nav-link">Home</a></li>
             <li><a href="notes.php" class="nav-link">Notes</a></li>
             <li><a href="folders_page.php" class="nav-link active-folder">Folders</a></li>
-            <li>Calendar</li>
+            <li><a href="calendar.php" class="nav-link">Calendar</li>
         </ul>
         <a href="new.php" class="add-note-btn" style="margin-top: 40px;">＋ Add Note</a>
     </aside>
